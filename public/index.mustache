@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guitar Collection Bro!</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <main>
+    <h1>What kind of Guitar do you have?</h1>
+    <form method="post" action="/newguitar" id="filloutform">
+        <input type="text" placeholder="brand" name="brand">
+        <select name="type">
+            <option value="type" disabled="disabled" selected="selected">type</option>
+            <option value="Electric">Electric</option>
+            <option value="Acoustic">Acoustic</option>
+            <option value="Bass">Bass</option>
+        </select>
+        <input type="text" placeholder="strings" name="strings">
+        <input type="text" placeholder="price" name="price">
+        <input type="submit">
+    </form>
+    </main>
+
+    <div class="displaydata">
+    <br>
+    {{#guitar}}
+    <div class="listing"><p>{{brand}}</p><p>{{type}}</p><p>{{strings}}</p><p>${{price}}</p></div>
+    {{/guitar}}
+    {{^guitar}}
+    <div></div>
+    {{/guitar}}
+    </div>
+</body>
+</html>
